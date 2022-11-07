@@ -1,53 +1,14 @@
-/* SIGNATURE ANIMATION */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap');
-/*THE FONT STYLE OF MY SIGNATURE IS USED UNDER THE SIL OPEN FONT LICENSE: "https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL"*/
-div.sign, div.sign > a {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-	font-family: 'Libre Barcode 39 Text', cursive;
-    font-size: 1vw;
-    border-radius: 0;
-    margin: 0;
-    padding: 0;
-	margin-top: auto;
-	text-align: center;
-	background: linear-gradient(
-		90deg,
-		black 3%,
-        pink 15%,
-        red 28%,
-		orange 40%,
-		yellow 50%,
-        green 60%,
-        blue 72%,
-        purple 85%,
-        white 97%
-	);
-	color: #fff;
-	-webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: 15s SIG linear infinite,
-    15s Always ease alternate infinite;
-}
-@keyframes SIG {
-	100% { background-position: 200vw }
-}
-div.sign > a {
-    font-size: 850%;
-    max-width: 100%;
-}
-@media (max-width: 790px) {
-    div.sign > a {
-        font-size: 600%;
-    }
-}
-/**END CSS AUTHOR LIST**/
-
 :root {
     --card-background: lightgray;
-    --rainbow: linear-gradient(to right, pink, red, orange, yellow, yellowgreen, green, skyblue, blue, indigo, purple, violet);
+    --rainbow: linear-gradient(90deg, rgba(255, 192, 203, 50%) 2%, rgba(255, 0, 0, 50%), rgba(255, 165, 0, 50%), rgba(255, 255, 0, 50%), rgba(0, 128, 0, 50%), rgba(135, 206, 235, 50%), rgba(0, 0, 255, 50%), rgba(128, 0, 128, 50%), rgba(255, 192, 203, 50%) 98%);
+}
+
+@keyframes shiftR {
+	100% { background-position: 500vw }
+}
+
+@keyframes shiftL {
+	100% { background-position: -500vw }
 }
 
 .flex {
@@ -60,7 +21,8 @@ div.sign > a {
 .card {
     margin: 2em;
     padding: 2em;
-    background: var(--card-background);
+    background: var(--rainbow);
+    animation: 60s shiftR linear infinite;
 }
 
 @media (min-width: 650px) {
@@ -82,6 +44,7 @@ img {
     border-radius: 50%;
     padding: 0.5em;
     background: var(--rainbow);
+    animation: 60s shiftL linear infinite;
 }
 
 @media (max-width: 300px) {
