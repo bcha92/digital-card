@@ -29,6 +29,7 @@
     .card {
         margin: 0.5em 0.25em;
         padding: 1.5em 1em;
+        animation: 90s shiftR linear infinite;
     }
 }
 
@@ -36,6 +37,7 @@
     .card {
         margin: 1em 0.5em;
         padding: 2em 1.5em;
+        animation: 120s shiftR linear infinite;
     }
 }
 
@@ -68,6 +70,19 @@ img {
 @media (max-width: 300px) {
     img {
         width: 100%;
+    }
+}
+
+@media (min-width: 900px) {
+    img {
+        animation: 90s shiftL linear infinite;
+    }
+}
+
+/* Computer Screen Size ONLY */
+@media (min-width: 1400px) {
+    img {
+        animation: 150s shiftL linear infinite;
     }
 }
 
